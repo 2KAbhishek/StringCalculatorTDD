@@ -76,4 +76,9 @@ public class StringCalculatorTest {
 			throw e;
 		}
 	}
+
+	@Test
+	public void ignoreGreaterThanThousand() throws Exception {
+		assertEquals(strCalc.add("2,1001,5"), 7);
+	}
 }
