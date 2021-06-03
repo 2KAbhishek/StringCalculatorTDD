@@ -44,7 +44,12 @@ public class StringCalculatorTest {
 
 	@Test
 	public void nLineSeperatedReturnsSum() {
-		assertEquals(strCalc.add("1\n,2,3\n4,5"),15);
+		assertEquals(strCalc.add("1\n,2,3\n4,5"), 15);
+	}
+
+	@Test
+	public void twoAnyDelimeterSeperatedReturnsSum() {
+		assertEquals(strCalc.add("//;\\n1;2"), 3);
 	}
 
 }
