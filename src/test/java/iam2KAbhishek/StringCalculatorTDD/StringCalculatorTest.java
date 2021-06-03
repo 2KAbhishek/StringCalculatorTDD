@@ -86,4 +86,9 @@ public class StringCalculatorTest {
 	public void anyLengthDelimeters() throws Exception {
 		assertEquals(strCalc.add("//[***]\\n1***2***3"), 6);
 	}
+
+	@Test
+	public void multipleDelimeters() throws Exception {
+		assertEquals(strCalc.add("//[*][%]\\n1*2%3"), 6);
+	}
 }
