@@ -81,4 +81,9 @@ public class StringCalculatorTest {
 	public void ignoreGreaterThanThousand() throws Exception {
 		assertEquals(strCalc.add("2,1001,5"), 7);
 	}
+
+	@Test
+	public void anyLengthDelimeters() throws Exception {
+		assertEquals(strCalc.add("//[***]\\n1***2***3"), 6);
+	}
 }
