@@ -1,2 +1,5 @@
-# Excluded files
+# Classes
 /target/
+
+# Test Web Output
+/test-output/
