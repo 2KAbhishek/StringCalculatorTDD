@@ -4,7 +4,8 @@
 package iam2KAbhishek.StringCalculatorTDD;
 
 /**
- * @author 2KAbhishek Main string calculator class
+ * @author 2KAbhishek
+ * Main StringCalculator class
  */
 public class StringCalculator {
 
@@ -38,7 +39,7 @@ public class StringCalculator {
 
 	/**
 	 * @param nums
-	 * @return array of negative numbers
+	 * @return String of negative numbers
 	 */
 	private String getNegative(String[] nums) {
 		StringBuilder sbr = new StringBuilder();
