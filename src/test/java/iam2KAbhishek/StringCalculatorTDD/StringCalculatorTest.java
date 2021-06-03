@@ -27,4 +27,9 @@ public class StringCalculatorTest {
 		assertEquals(strCalc.add("1"), 1);
 	}
 
+	@Test
+	public void twoCommaSeperatedReturnsSum() {
+		assertEquals(strCalc.add("1,2"),3);
+	}
+
 }
