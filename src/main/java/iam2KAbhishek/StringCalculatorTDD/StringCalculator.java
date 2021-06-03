@@ -3,8 +3,6 @@
  */
 package iam2KAbhishek.StringCalculatorTDD;
 
-import java.util.Arrays;
-
 /**
  * @author 2KAbhishek Main string calculator class
  */
@@ -25,7 +23,7 @@ public class StringCalculator {
 			try {
 				intNum = Integer.parseInt(num);
 				if (intNum < 0)
-					throw new Exception("Negatives not allowed" + Arrays.toString(getNegative(nums)));
+					throw new Exception("Negatives not allowed: " + getNegative(nums));
 				else
 					sum += intNum;
 			} catch (NumberFormatException e) {
@@ -40,18 +38,16 @@ public class StringCalculator {
 	 * @param nums
 	 * @return array of negative numbers
 	 */
-	private int[] getNegative(String[] nums) {
-		int[] negatives = new int[nums.length];
-		int intNum = 0, count = 0;
+	private String getNegative(String[] nums) {
+		StringBuilder sbr = new StringBuilder();
 		for (String num : nums) {
 			try {
-				intNum = Integer.parseInt(num);
-				if (intNum < 0)
-					negatives[count++] = intNum;
+				if (Integer.parseInt(num) < 0)
+					sbr.append(num + " ");
 			} catch (NumberFormatException e) {
 				continue;
 			}
 		}
-		return negatives;
+		return sbr.toString();
 	}
 }
