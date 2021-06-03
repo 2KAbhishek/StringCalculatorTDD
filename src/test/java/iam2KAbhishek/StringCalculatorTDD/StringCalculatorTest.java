@@ -18,43 +18,48 @@ public class StringCalculatorTest {
 	}
 
 	@Test
-	public void emptyReturnsZero() {
+	public void emptyReturnsZero() throws Exception {
 		assertEquals(strCalc.add(""), 0);
 	}
 
 	@Test
-	public void singleReturnsValue() {
+	public void singleReturnsValue() throws Exception {
 		assertEquals(strCalc.add("1"), 1);
 	}
 
 	@Test
-	public void twoCommaSeperatedReturnsSum() {
+	public void twoCommaSeperatedReturnsSum() throws Exception {
 		assertEquals(strCalc.add("1,2"), 3);
 	}
 
 	@Test
-	public void nCommaSeperatedReturnsSum() {
+	public void nCommaSeperatedReturnsSum() throws Exception {
 		assertEquals(strCalc.add("1,2,3,4,5"), 15);
 	}
 
 	@Test
-	public void twoLineSeperatedReturnsSum() {
+	public void twoLineSeperatedReturnsSum() throws Exception {
 		assertEquals(strCalc.add("1\n2"), 3);
 	}
 
 	@Test
-	public void nLineSeperatedReturnsSum() {
+	public void nLineSeperatedReturnsSum() throws Exception {
 		assertEquals(strCalc.add("1\n,2,3\n4,5"), 15);
 	}
 
 	@Test
-	public void twoAnyDelimeterSeperatedReturnsSum() {
+	public void twoAnyDelimeterSeperatedReturnsSum() throws Exception {
 		assertEquals(strCalc.add("//;\\n1;2"), 3);
 	}
 
 	@Test
-	public void nAnyDelimeterSeperatedReturnsSum() {
+	public void nAnyDelimeterSeperatedReturnsSum() throws Exception {
 		assertEquals(strCalc.add("//;\\n1XY;2_+3(4)$5"), 15);
+	}
+
+	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives.*")
+	public void singleNegativeThrowsException() throws Exception {
+		strCalc.add("-1");
 	}
 
 }
