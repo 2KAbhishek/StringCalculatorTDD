@@ -24,10 +24,12 @@ public class StringCalculator {
 				intNum = Integer.parseInt(num);
 				if (intNum < 0)
 					throw new Exception("Negatives not allowed: " + getNegative(nums));
+				else if (intNum > 1000)
+					continue;
 				else
 					sum += intNum;
 			} catch (NumberFormatException e) {
-				sum += 0;
+				continue;
 			}
 		}
 
