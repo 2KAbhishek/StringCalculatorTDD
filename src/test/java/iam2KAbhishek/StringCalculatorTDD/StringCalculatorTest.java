@@ -52,4 +52,9 @@ public class StringCalculatorTest {
 		assertEquals(strCalc.add("//;\\n1;2"), 3);
 	}
 
+	@Test
+	public void nAnyDelimeterSeperatedReturnsSum() {
+		assertEquals(strCalc.add("//;\\n1XY;2_+3(4)$5"), 15);
+	}
+
 }
