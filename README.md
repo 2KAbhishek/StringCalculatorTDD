@@ -30,6 +30,7 @@
 ## Inspiration
 
 `Test Driven Development` or `TDD` is something I was hearing a lot but didn't fully understand.
+
 This little project is my way of exploring and learning it's fundamentals.
 
 ## What it does
@@ -49,14 +50,14 @@ To explore StringCalculatorTDD, follow these steps:
 ```bash
 git clone https://github.com/2kabhishek/StringCalculatorTDD
 cd StringCalculatorTDD
-code . # Or any other of your favourite editor
+code . # Or any other of your favorite editor
 ```
 
 ## Using StringCalculatorTDD
 
-After cloning the project one good way to learn from it woud be using git history.
-Just do a `git log` and look at the changes, you can go through the entire process of TDD one step at a time.
+After cloning the project one good way to learn from it would be using git history.
 
+Just do a `git log` and look at the changes, you can go through the entire process of TDD one step at a time.
 
 ## How it was built
 
@@ -65,6 +66,7 @@ StringCalculatorTDD was built using `Java` and `TestNG`, the IDE used was `Eclip
 ## Challenges faced
 
 Wrapping my head around the laws of TDD, which are:
+
 - You are not allowed to write any production code unless it is to make a failing unit test pass.
 - You are not allowed to write any more of a unit test than is sufficient to fail.
 - You are not allowed to write any more production code than is sufficient to pass one failing test.
