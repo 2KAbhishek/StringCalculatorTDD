@@ -59,7 +59,21 @@ public class StringCalculatorTest {
 
 	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives.*")
 	public void singleNegativeThrowsException() throws Exception {
-		strCalc.add("-1");
+		try {
+			strCalc.add("-1");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
+		}
 	}
 
+	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives.*")
+	public void nNegativesThrowsException() throws Exception {
+		try {
+			strCalc.add("-1,5,-10,-20");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
+		}
+	}
 }
