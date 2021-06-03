@@ -8,6 +8,8 @@ package iam2KAbhishek.StringCalculatorTDD;
  */
 public class StringCalculator {
 
+	private static final String delimeter = ",|\n";
+
 	/**
 	 * Add numbers present in input string
 	 *
@@ -15,7 +17,7 @@ public class StringCalculator {
 	 * @return sum of numbers
 	 */
 	public int add(String numbers) {
-		String[] nums = numbers.split(",|\n");
+		String[] nums = numbers.split(delimeter);
 		int sum = 0;
 
 		for (String num : nums) {
