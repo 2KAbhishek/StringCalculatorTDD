@@ -22,4 +22,9 @@ public class StringCalculatorTest {
 		assertEquals(strCalc.add(""), 0);
 	}
 
+	@Test
+	public void singleReturnsValue() {
+		assertEquals(strCalc.add("1"), 1);
+	}
+
 }
