@@ -8,7 +8,7 @@ package iam2KAbhishek.StringCalculatorTDD;
  */
 public class StringCalculator {
 
-	private static final String delimeter = ",|\n";
+	private static final String delimeter = "\\D";
 
 	/**
 	 * Add numbers present in input string
