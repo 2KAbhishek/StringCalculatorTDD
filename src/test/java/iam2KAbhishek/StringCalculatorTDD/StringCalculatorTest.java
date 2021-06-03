@@ -29,12 +29,17 @@ public class StringCalculatorTest {
 
 	@Test
 	public void twoCommaSeperatedReturnsSum() {
-		assertEquals(strCalc.add("1,2"),3);
+		assertEquals(strCalc.add("1,2"), 3);
 	}
 
 	@Test
 	public void nCommaSeperatedReturnsSum() {
-		assertEquals(strCalc.add("1,2,3,4,5"),15);
+		assertEquals(strCalc.add("1,2,3,4,5"), 15);
+	}
+
+	@Test
+	public void twoLineSeperatedReturnsSum() {
+		assertEquals(strCalc.add("1\n2"), 3);
 	}
 
 }
