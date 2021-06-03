@@ -7,4 +7,6 @@ import static org.testng.Assert.assertTrue;
  */
 public class StringCalculatorTest {
 
+	private StringCalculator strCalc;
+
 }
