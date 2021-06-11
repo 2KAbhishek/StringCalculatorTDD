@@ -42,22 +42,7 @@ public class StringCalculatorTest {
 		assertEquals(strCalc.add("1\n2"), 3);
 	}
 
-	@Test
-	public void nLineSeperatedReturnsSum() throws Exception {
-		assertEquals(strCalc.add("1\n,2,3\n4,5"), 15);
-	}
-
-	@Test
-	public void twoAnyDelimeterSeperatedReturnsSum() throws Exception {
-		assertEquals(strCalc.add("//;\\n1;2"), 3);
-	}
-
-	@Test
-	public void nAnyDelimeterSeperatedReturnsSum() throws Exception {
-		assertEquals(strCalc.add("//;\\n1XY;2_+3(4)$5"), 15);
-	}
-
-	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives.*")
+	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives not allowed: -1.*")
 	public void singleNegativeThrowsException() throws Exception {
 		try {
 			strCalc.add("-1");
@@ -67,7 +52,7 @@ public class StringCalculatorTest {
 		}
 	}
 
-	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives.*")
+	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives not allowed: -1 -10 -20.*")
 	public void nNegativesThrowsException() throws Exception {
 		try {
 			strCalc.add("-1,5,-10,-20");
@@ -80,15 +65,8 @@ public class StringCalculatorTest {
 	@Test
 	public void ignoreGreaterThanThousand() throws Exception {
 		assertEquals(strCalc.add("2,1001,5"), 7);
+		assertEquals(strCalc.add("2,1000,5"), 1007);
+		assertEquals(strCalc.add("2,999,5"), 1006);
 	}
 
-	@Test
-	public void anyLengthDelimeters() throws Exception {
-		assertEquals(strCalc.add("//[***]\\n1***2***3"), 6);
-	}
-
-	@Test
-	public void multipleDelimeters() throws Exception {
-		assertEquals(strCalc.add("//[*][%]\\n1*2%3"), 6);
-	}
 }
