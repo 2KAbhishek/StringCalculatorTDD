@@ -57,7 +57,7 @@ public class StringCalculatorTest {
 		assertEquals(strCalc.add("//;\\n1XY;2_+3(4)$5"), 15);
 	}
 
-	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives.*")
+	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives not allowed: -1.*")
 	public void singleNegativeThrowsException() throws Exception {
 		try {
 			strCalc.add("-1");
@@ -67,7 +67,7 @@ public class StringCalculatorTest {
 		}
 	}
 
-	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives.*")
+	@Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp = "^Negatives not allowed: -1 -10 -20.*")
 	public void nNegativesThrowsException() throws Exception {
 		try {
 			strCalc.add("-1,5,-10,-20");
