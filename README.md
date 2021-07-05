@@ -23,7 +23,7 @@
 <a href="https://github.com/2KAbhishek?tab=followers">
 <img alt="Followers" src="https://img.shields.io/github/followers/2kabhishek?color=222&style=plastic&label=Followers"> </a>
 
-<h2>Learning TDD with StringCalculator 🧪🧮</h2>
+<h3>Learning TDD with StringCalculator 🧪🧮</h3>
 
 </div>
 
